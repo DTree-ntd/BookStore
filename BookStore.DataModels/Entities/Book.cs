@@ -1,10 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BookStore.DataModels.Book
+namespace BookStore.DataModels.Entities
 {
     public class Book
     {
+        public Book()
+        {
+            Stores = new HashSet<Store>();
+        }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { set; get; }
@@ -15,12 +21,10 @@ namespace BookStore.DataModels.Book
         [Required]
         public decimal Price { set; get; }
 
-        public int CategoryId { get; set; }
-        [ForeignKey("CategoryId")]
-        public virtual Store.Store Store { get; set; }
-
         public int AuthorId { set; get; }
         [ForeignKey("AuthorId")]
-        public virtual Author.Author Author { set; get; }
+        public Author Author { set; get; }
+
+        public ICollection<Store> Stores { get; set; }
     }
 }

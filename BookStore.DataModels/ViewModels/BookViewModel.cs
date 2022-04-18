@@ -1,4 +1,4 @@
-﻿namespace BookStore.DataModels.Book
+﻿namespace BookStore.DataModels.ViewModels
 {
     public class BookViewModel
     {
@@ -7,6 +7,5 @@
         public int Quantity { set; get; }
         public decimal Price { set; get; }
         public string AuthorName { set; get; }
-        public string StoreName { get; set; }
     }
 }
