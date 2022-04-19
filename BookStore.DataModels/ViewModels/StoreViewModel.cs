@@ -1,4 +1,6 @@
-﻿namespace BookStore.DataModels.ViewModels
+﻿using System.Collections.Generic;
+
+namespace BookStore.DataModels.ViewModels
 {
     public class StoreViewModel
     {

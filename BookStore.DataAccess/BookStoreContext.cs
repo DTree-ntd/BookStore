@@ -5,6 +5,10 @@ namespace BookStore.DataAccess
 {
     public class BookStoreContext : DbContext
     {
+        public BookStoreContext() : base("DbConnectionString")
+        {
+
+        }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Store> Stores { get; set; }
